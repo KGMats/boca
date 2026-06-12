@@ -173,6 +173,7 @@ while(42) {
       $zip = new ZipArchive;
       if ($zip->open($flocal) === true) {
 	$zip->extractTo($dir . $ds . "problemdatalocal");
+      system("chmod -R 755 $dir");
 	$zip->close();
       } else {
 	DBExec($c, "rollback work", "Autojudging(zipfailed)");
@@ -200,6 +201,7 @@ while(42) {
     $zip = new ZipArchive;
     if ($zip->open($dir . $ds . $run["inputname"]) === true) {
       $zip->extractTo($dir . $ds . "problemdata");
+      system("chmod -R 755 $dir");
       $zip->close();
     } else {
       echo "Failed to unzip the package file -- please check the problem package (maybe it is encrypted?)\n";
@@ -328,6 +330,7 @@ while(42) {
   $zip = new ZipArchive;
   if ($zip->open($dir . $ds . $run["inputname"]) === true) {
     $zip->extractTo($dir, array("compile" . $ds . $run["extension"]));
+      system("chmod -R 755 $dir");
     $zip->close();
   } else {
     echo "Failed to unzip the package file -- please check the problem package\n";
@@ -401,6 +404,7 @@ while(42) {
 	continue;
       }
       $zip->extractTo($dir, array_merge(array("run" . $ds . $run["extension"]),array("compare" . $ds . $run["extension"]),$inputlist,$outputlist));
+      system("chmod -R 755 $dir");
       $zip->close();
       if(chmod($dir . $ds . 'output', 0700)==false || chown($dir . $ds . 'output','root') == false) {
 	echo "Failed to chown/chdir the output folder -- please check the system and problem package\n";
@@ -587,6 +591,7 @@ while(42) {
       $zip = new ZipArchive;
       if ($zip->open($dir . $ds . $run["inputname"]) === true) {
       $zip->extractTo($dir, array_merge(array("compare" . $ds . $run["extension"]),$outputlist));
+      system("chmod -R 755 $dir");
       $zip->close();
       } else {
       echo "Failed to unzip the file (outputs) -- please check the problem package\n";
