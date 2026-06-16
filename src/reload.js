@@ -20,7 +20,7 @@
 var msg = 0;
 var rld  = 0;
 var selecionando = 0;
-var seg = 120;
+var seg = 60;
 function recarregar() {
 	if (rld) {
 		clearTimeout(rld);

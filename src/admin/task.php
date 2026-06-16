@@ -26,7 +26,6 @@ $order = myhtmlspecialchars($_GET["order"]);
 	else
 		$order='';
 }
-
 if(($ct = DBContestInfo($_SESSION["usertable"]["contestnumber"])) == null)
 	ForceLoad("../index.php");
 
@@ -141,6 +140,10 @@ for ($i=0; $i<count($task); $i++) {
   echo "</td>\n";
 }
 echo "</table>";
+
+echo "<script language=\"javascript\" src=\"../reload.js\"></script>\n";
+echo "<script language=\"javascript\">Comecar()</script>\n";
+
 if (count($task) == 0) echo "<br><center><b><font color=\"#ff0000\">NO TASKS FOUND</font></b></center>";
 
 ?>
