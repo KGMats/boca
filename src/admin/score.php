@@ -18,5 +18,6 @@
 // Last modified 05/aug/2012 by cassio@ime.usp.br
 require('header.php');
 echo "<script language=\"javascript\" src=\"../reload.js\"></script>\n";
+echo "<script language=\"javascript\">recarregar()</script>\n";
 require('../scorelower.php');
 ?>
