@@ -162,6 +162,8 @@ for ($i=0; $i<count($task); $i++) {
   echo "&nbsp;</td>\n";
 }
 echo "</table>";
+echo "<script language=\"javascript\" src=\"../reload.js\"></script>\n";
+echo "<script language=\"javascript\">Comecar()</script>\n";
 if (!$anyprinted) echo "<br><center><b><font color=\"#ff0000\">NO TASKS FOUND</font></b></center>";
 
 ?>
