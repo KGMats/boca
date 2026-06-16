@@ -32,7 +32,7 @@ require_once("../db.php");
 echo "<html><head><title>Score Board Page</title>\n";
 echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
 echo "<link rel=stylesheet href=\"../Css.php\" type=\"text/css\">\n";
-echo "<meta http-equiv=\"refresh\" content=\"60\" />"; 
+// echo "<meta http-equiv=\"refresh\" content=\"60\" />"; 
 
 if(!ValidSession()) {
 	InvalidSession("score/index.php");
@@ -62,3 +62,9 @@ if(!isset($_SESSION["scorenomenu"]) || !$_SESSION["scorenomenu"]) {
 	echo "</table>\n";
 }
 ?>
+
+<script>
+setTimeout(function() {
+    location.reload();
+}, 10000); // 10 sec
+</script>
