@@ -17,5 +17,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Last modified 05/aug/2012 by cassio@ime.usp.br
 require('header.php');
+echo "<script language=\"javascript\" src=\"../reload.js\"></script>\n";
 require('../scorelower.php');
 ?>
